@@ -1,32 +1,52 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
-  </div>
+  <v-app>
+    <!-- <Cards />
+    <Marksheet />
+    <Mesh />-->
+    <!-- <Syllabus /> -->
+    <!-- <Marks /> -->
+    <Timetable />
+  </v-app>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script lang="ts">
+import Vue from "vue";
 
-#nav {
-  padding: 30px;
-}
+//import Cards from "./components/Parent/Cards.vue";
+//import Marks from "./components/Parent/Marks.vue";
+//import Mesh from "./components/Parent/Mesh.vue";
+//import Marksheet from "./components/Parent/Marksheet.vue";
+//import TCReq from "./components/Parent/TCReq.vue";
+//import Navbar from "./components/Parent/Navbar.vue";
+//import Appointment from "./components/Parent/Appointment.vue";
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+//import Syllabus from "./components/Teacher/Syllabus.vue";
+//import Application from "./components/Teacher/Application.vue";
+//import Recommend from "./components/Teacher/Recommend.vue";
+//import Test from "./components/Parent/Test.vue";
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+import Timetable from "./components/Admin/Timetable.vue";
+
+export default Vue.extend({
+  name: "App",
+
+  components: {
+    //Cards
+    //Marks
+    //Marksheet,
+    //Mesh,
+    // TCReq
+    //Appointment
+    //Application
+    //Navbar
+    //Recommend
+    // Syllabus
+    //Test
+    Timetable
+  },
+
+  data: () => ({
+    //
+  })
+});
+</script>
