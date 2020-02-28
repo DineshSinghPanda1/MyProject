@@ -13,7 +13,7 @@
         <!---------------EnD--------------------------------->
         <!--------------------------View---------------->
         <v-tab-item>
-          <v-card flat>
+          <v-card>
             <!------------->
             <v-card-text>
               <v-row align="center">
@@ -31,8 +31,52 @@
             <v-alert outlined color="purple">
               <v-layout>
                 <v-row>
-                  <v-col class="ma-4" v-for="card in cards" :key="card">
+                  <v-col class="ma-2" v-for="card in cards" :key="card.id">
                     <v-hover v-slot:default="{ hover }" open-delay="200">
+                      <v-card :elevation="hover ? 16 : 2" width="350%">
+                        <!----------img---->
+                        <v-col>
+                          <div id="avatar" class="text-center">
+                            <v-avatar size="70" color="grey" class="mt-n10"></v-avatar>
+                          </div>
+                        </v-col>
+                        <!--------->
+                        <div>
+                          <v-card-title class=".font-weight-light justify-center">{{ card.name }}</v-card-title>
+                        </div>
+
+                        <v-list dense>
+                          <v-list-item-group v-model="item" color="primary" class=".overline">
+                            <v-list-item v-for="(item, i) in items" :key="i">
+                              <v-list-item-content>
+                                <v-list-item-title v-text="item.data"></v-list-item-title>
+                              </v-list-item-content>
+                              <v-list-item-content>
+                                <v-list-item-title v-text="item.value"></v-list-item-title>
+                              </v-list-item-content>
+                            </v-list-item>
+                          </v-list-item-group>
+                        </v-list>
+
+                        <!---------------------->
+
+                        <!----------chip----------->
+                        <v-row>
+                          <v-col class="text-center">
+                            <v-chip class="ma-2" color="green" text-color="white">Regular</v-chip>
+                          </v-col>
+                        </v-row>
+                        <!--------------/chip---------->
+                      </v-card>
+                    </v-hover>
+                  </v-col>
+                </v-row>
+              </v-layout>
+              <!----------------------2 row----------->
+              <v-layout>
+                <v-row>
+                  <v-col class="ma-3" v-for="card in cards" :key="card.id">
+                    <v-hover v-slot:default="{ hover }" open-delay="250%">
                       <v-card :elevation="hover ? 16 : 2">
                         <!----------img---->
                         <v-col>

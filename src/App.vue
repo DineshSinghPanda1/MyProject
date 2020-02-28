@@ -1,11 +1,14 @@
 <template>
   <v-app>
     <!-- <Cards />
+  
     <Marksheet />
     <Mesh />-->
     <!-- <Syllabus /> -->
+    <Marks />
+    <Transport />
+    <!-- <Timetable /> -->
     <!-- <Marks /> -->
-    <Timetable />
   </v-app>
 </template>
 
@@ -24,15 +27,16 @@ import Vue from "vue";
 //import Application from "./components/Teacher/Application.vue";
 //import Recommend from "./components/Teacher/Recommend.vue";
 //import Test from "./components/Parent/Test.vue";
+import Transport from "./components/Teacher/Transport.vue";
 
-import Timetable from "./components/Admin/Timetable.vue";
+//import Timetable from "./components/Admin/Timetable.vue";
 
 export default Vue.extend({
   name: "App",
 
   components: {
     //Cards
-    //Marks
+    // Marks
     //Marksheet,
     //Mesh,
     // TCReq
@@ -42,7 +46,8 @@ export default Vue.extend({
     //Recommend
     // Syllabus
     //Test
-    Timetable
+    //Timetable
+    Transport
   },
 
   data: () => ({
