@@ -1,11 +1,6 @@
 <template>
   <v-row justify="center">
-    <v-dialog
-      v-model="dialog"
-      fullscreen
-      hide-overlay
-      transition="dialog-bottom-transition"
-    >
+    <v-dialog v-model="dialog" fullscreen hide-overlay transition="dialog-bottom-transition">
       <template v-slot:activator="{ on }">
         <v-btn color="primary" dark v-on="on">Open Dialog</v-btn>
       </template>
@@ -23,21 +18,17 @@
         <!-----Main marks card----->
         <v-container grid-list-md>
           <v-layout row>
-            <v-col cols="6" v-for="item in marks" :key="item.id">
+            <v-col cols="6" v-for="item in detail" :key="item.id">
               <v-card>
                 <v-card-title class="grey">Assesment</v-card-title>
                 <v-row>
                   <v-col class="text-center">
                     <v-card-text>Total</v-card-text>
-                    <v-chip class="ma-2" color="green">{{
-                      item.max_marks
-                    }}</v-chip>
+                    <v-chip class="ma-2" color="green">{{ item.max_marks }}</v-chip>
                   </v-col>
                   <v-col>
                     <v-card-text>Obtain</v-card-text>
-                    <v-chip class="ma-2" color="blue">{{
-                      item.marks_obtained
-                    }}</v-chip>
+                    <v-chip class="ma-2" color="blue">{{ item.marks_obtained }}</v-chip>
                   </v-col>
                   <v-col>
                     <v-card-text>Percentage</v-card-text>
@@ -56,16 +47,22 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { mapState } from "vuex";
+import { mapGetters, mapActions, mapState, mapMutations } from "vuex";
 
 export default Vue.extend({
   name: "Marks",
   mounted() {
     this.$store.dispatch("loadMarks");
   },
+  // methods: {
+  //   ...mapActions(["loadMarks"]),
+  //   ...mapMutations(["setMarks"])
+  // },
   computed: {
+    ...mapGetters(["detail"]),
     ...mapState(["marks"])
   },
+
   data: () => ({
     dialog: false,
     notifications: false,

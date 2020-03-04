@@ -11,90 +11,83 @@
         <!-----------------Today---Page------------------->
         <v-tab-item>
           <v-row>
-            <v-col
-              cols="12"
-              md="6"
-              v-for="(stu, index) in balance"
-              :key="index"
-            >
+            <v-col cols="12" md="6" v-for="item in applicationdetail" :key="item.id">
               <v-hover v-slot:default="{ hover }">
                 <v-card :elevation="hover ? 8 : 2">
+                  <!-------------------->
                   <v-list>
                     <v-list-item>
-                      <v-list-item-avatar
-                        color="grey"
-                        size="100"
-                      ></v-list-item-avatar>
+                      <v-list-item-avatar color="grey" size="100"></v-list-item-avatar>
                       <v-list-item-content>
-                        <v-list-item-title class="title">{{
-                          stu.name
-                        }}</v-list-item-title>
+                        <v-list-item-title class="title">
+                          {{
+                          item.first_name
+                          }}
+                        </v-list-item-title>
                         <v-divider></v-divider>
                         <v-list-item-text class="body-2">
-                          <p>Roll no: {{ stu.rollno }}</p>
-                          <p>Father : {{ stu.father }}</p>
-                          <p>Mobile: {{ stu.mobile }}</p>
+                          <p>Roll no: {{ item.roll }}</p>
+                          <p>Father : {{ item.father_name }}</p>
+                          <p>Mobile: {{ item.contacts1 }}</p>
                         </v-list-item-text>
                         <v-divider></v-divider>
                         <!--------------------->
-                        <v-row align="center">
-                          <v-col class="text-center" cols="12" md="6">
-                            <div class="my-2">
-                              <v-btn small rounded color="red">Reject</v-btn>
-                            </div>
-                          </v-col>
-                          <v-col class="text-center" cols="12" md="6">
-                            <div class="my-2">
-                              <v-btn small rounded color="green">Accept</v-btn>
-                            </div>
-                          </v-col></v-row
-                        >
+
                         <!------------------>
                       </v-list-item-content>
                       <div class="float-right">
                         <v-col cols="12">
                           <div>
-                            <p>{{ stu.datestart }}</p>
+                            <p>{{ item.to }}</p>
                           </div>
                           <div>
-                            <p>{{ stu.dateend }}</p>
+                            <p>{{ item.from }}</p>
                           </div>
                         </v-col>
                         <v-col cols="12">
-                          <v-chip color="green" text-color="white" class
-                            >View</v-chip
-                          >
+                          <v-chip color="green" text-color="white" class>View</v-chip>
                         </v-col>
                       </div>
                     </v-list-item>
                   </v-list>
+
+                  <v-divider></v-divider>
+                  <!----------------->
+                  <v-row align="center">
+                    <v-col class="text-center" cols="12" md="6">
+                      <div>
+                        <v-btn small rounded color="red" class="white--text">Reject</v-btn>
+                      </div>
+                    </v-col>
+                    <v-col class="text-center" cols="12" md="6">
+                      <div>
+                        <v-btn small rounded color="green" class="white--text">Accept</v-btn>
+                      </div>
+                    </v-col>
+                  </v-row>
+                  <!------------------------->
                 </v-card>
               </v-hover>
             </v-col>
-          </v-row></v-tab-item
-        >
+          </v-row>
+        </v-tab-item>
         <!---------------EnD--------------------------------->
+
         <!--------------------------Last Week---------------->
-        <v-tab-item
-          ><v-row>
-            <v-col
-              cols="12"
-              md="6"
-              v-for="(stu, index) in balance"
-              :key="index"
-            >
+        <v-tab-item>
+          <v-row>
+            <v-col cols="12" md="6">
               <v-hover v-slot:default="{ hover }">
                 <v-card :elevation="hover ? 8 : 2">
                   <v-list>
                     <v-list-item>
-                      <v-list-item-avatar
-                        color="grey"
-                        size="100"
-                      ></v-list-item-avatar>
+                      <v-list-item-avatar color="grey" size="100"></v-list-item-avatar>
                       <v-list-item-content>
-                        <v-list-item-title class="title">{{
+                        <v-list-item-title class="title">
+                          {{
                           stu.name
-                        }}</v-list-item-title>
+                          }}
+                        </v-list-item-title>
                         <v-divider></v-divider>
                         <v-list-item-text class="body-2">
                           <p>Roll no: {{ stu.rollno }}</p>
@@ -103,18 +96,7 @@
                         </v-list-item-text>
                         <v-divider></v-divider>
                         <!--------------------->
-                        <v-row align="center">
-                          <v-col class="text-center" cols="12" md="6">
-                            <div class="my-2">
-                              <v-btn small rounded color="red">Reject</v-btn>
-                            </div>
-                          </v-col>
-                          <v-col class="text-center" cols="12" md="6">
-                            <div class="my-2">
-                              <v-btn small rounded color="green">Accept</v-btn>
-                            </div>
-                          </v-col></v-row
-                        >
+
                         <!------------------>
                       </v-list-item-content>
                       <div class="float-right">
@@ -127,40 +109,47 @@
                           </div>
                         </v-col>
                         <v-col cols="12">
-                          <v-chip color="green" text-color="white" class
-                            >View</v-chip
-                          >
+                          <v-chip color="green" text-color="white" class>View</v-chip>
                         </v-col>
                       </div>
                     </v-list-item>
                   </v-list>
+                  <v-divider></v-divider>
+                  <!----------------->
+                  <v-row align="center">
+                    <v-col class="text-center" cols="12" md="6">
+                      <div>
+                        <v-btn small rounded color="red" class="white--text">Reject</v-btn>
+                      </div>
+                    </v-col>
+                    <v-col class="text-center" cols="12" md="6">
+                      <div>
+                        <v-btn small rounded color="green" class="white--text">Accept</v-btn>
+                      </div>
+                    </v-col>
+                  </v-row>
+                  <!------------------------->
                 </v-card>
               </v-hover>
             </v-col>
-          </v-row></v-tab-item
-        >
+          </v-row>
+        </v-tab-item>
         <!---------------ENd------------------------------->
         <!--------------------------Overal---------------->
-        <v-tab-item
-          ><v-row>
-            <v-col
-              cols="12"
-              md="6"
-              v-for="(stu, index) in balance"
-              :key="index"
-            >
+        <v-tab-item>
+          <v-row>
+            <v-col cols="12" md="6">
               <v-hover v-slot:default="{ hover }">
                 <v-card :elevation="hover ? 8 : 2">
                   <v-list>
                     <v-list-item>
-                      <v-list-item-avatar
-                        color="grey"
-                        size="100"
-                      ></v-list-item-avatar>
+                      <v-list-item-avatar color="grey" size="100"></v-list-item-avatar>
                       <v-list-item-content>
-                        <v-list-item-title class="title">{{
+                        <v-list-item-title class="title">
+                          {{
                           stu.name
-                        }}</v-list-item-title>
+                          }}
+                        </v-list-item-title>
                         <v-divider></v-divider>
                         <v-list-item-text class="body-2">
                           <p>Roll no: {{ stu.rollno }}</p>
@@ -169,18 +158,7 @@
                         </v-list-item-text>
                         <v-divider></v-divider>
                         <!--------------------->
-                        <v-row align="center">
-                          <v-col class="text-center" cols="12" md="6">
-                            <div class="my-2">
-                              <v-btn small rounded color="red">Reject</v-btn>
-                            </div>
-                          </v-col>
-                          <v-col class="text-center" cols="12" md="6">
-                            <div class="my-2">
-                              <v-btn small rounded color="green">Accept</v-btn>
-                            </div>
-                          </v-col></v-row
-                        >
+
                         <!------------------>
                       </v-list-item-content>
                       <div class="float-right">
@@ -193,18 +171,31 @@
                           </div>
                         </v-col>
                         <v-col cols="12">
-                          <v-chip color="green" text-color="white" class
-                            >View</v-chip
-                          >
+                          <v-chip color="green" text-color="white" class>View</v-chip>
                         </v-col>
                       </div>
                     </v-list-item>
                   </v-list>
+                  <v-divider></v-divider>
+                  <!----------------->
+                  <v-row align="center">
+                    <v-col class="text-center" cols="12" md="6">
+                      <div>
+                        <v-btn small rounded color="red" class="white--text">Reject</v-btn>
+                      </div>
+                    </v-col>
+                    <v-col class="text-center" cols="12" md="6">
+                      <div>
+                        <v-btn small rounded color="green" class="white--text">Accept</v-btn>
+                      </div>
+                    </v-col>
+                  </v-row>
+                  <!------------------------->
                 </v-card>
               </v-hover>
             </v-col>
-          </v-row></v-tab-item
-        >
+          </v-row>
+        </v-tab-item>
         <!-----------------End----------------------------->
       </v-tabs>
     </v-card>
@@ -213,80 +204,92 @@
 
 <script lang="ts">
 import Vue from "vue";
+import { mapGetters, mapActions, mapState, mapMutations } from "vuex";
 
 export default Vue.extend({
   name: "Application",
+  mounted() {
+    this.$store.dispatch("loadApplication");
+  },
+  methods: {
+    ...mapActions(["loadApplication"]),
+    ...mapMutations(["setApplication"])
+  },
+  computed: {
+    ...mapGetters(["applicationdetail"]),
+    ...mapState(["application"])
+  },
 
   data: () => ({
-    tabs: null,
+    tabs: null
 
-    balance: [
-      {
-        name: "Muskesh Singh",
-        rollno: "3",
-        father: "Mahesh Singh",
-        mobile: "9876567768",
-        datestart: "03/04/2020",
-        dateend: "06/07/2020"
-      },
-      {
-        name: "Happy",
-        rollno: "15",
-        father: "Pradeep kumar",
-        mobile: "7656347700",
-        datestart: "03/04/2020",
-        dateend: "06/07/2020"
-      },
-      {
-        name: "Anuj shastri",
-        rollno: "2",
-        father: "Manoj shastri",
-        mobile: "8763006812",
-        datestart: "03/04/2020",
-        dateend: "06/07/2020"
-      },
-      {
-        name: "Anuj shastri",
-        rollno: "2",
-        father: "Manoj shastri",
-        mobile: "8763006812",
-        datestart: "03/04/2020",
-        dateend: "06/07/2020"
-      },
-      {
-        name: "Anuj shastri",
-        rollno: "2",
-        father: "Manoj shastri",
-        mobile: "8763006812",
-        datestart: "03/04/2020",
-        dateend: "06/07/2020"
-      },
-      {
-        name: "Anuj shastri",
-        rollno: "2",
-        father: "Manoj shastri",
-        mobile: "8763006812",
-        datestart: "03/04/2020",
-        dateend: "06/07/2020"
-      },
+    // balance: [
+    //   {
+    //     name: "Muskesh Singh",
+    //     rollno: "3",
+    //     father: "Mahesh Singh",
+    //     mobile: "9876567768",
+    //     datestart: "03/04/2020",
+    //     dateend: "06/07/2020"
+    //   },
+    //   {
+    //     name: "Happy",
+    //     rollno: "15",
+    //     father: "Pradeep kumar",
+    //     mobile: "7656347700",
+    //     datestart: "03/04/2020",
+    //     dateend: "06/07/2020"
+    //   },
+    //   {
+    //     name: "Anuj shastri",
+    //     rollno: "2",
+    //     father: "Manoj shastri",
+    //     mobile: "8763006812",
+    //     datestart: "03/04/2020",
+    //     dateend: "06/07/2020"
+    //   },
+    //   {
+    //     name: "Anuj shastri",
+    //     rollno: "2",
+    //     father: "Manoj shastri",
+    //     mobile: "8763006812",
+    //     datestart: "03/04/2020",
+    //     dateend: "06/07/2020"
+    //   },
+    //   {
+    //     name: "Anuj shastri",
+    //     rollno: "2",
+    //     father: "Manoj shastri",
+    //     mobile: "8763006812",
+    //     datestart: "03/04/2020",
+    //     dateend: "06/07/2020"
+    //   },
+    //   {
+    //     name: "Anuj shastri",
+    //     rollno: "2",
+    //     father: "Manoj shastri",
+    //     mobile: "8763006812",
+    //     datestart: "03/04/2020",
+    //     dateend: "06/07/2020"
+    //   },
 
-      {
-        name: "Anuj shastri",
-        rollno: "2",
-        father: "Manoj shastri",
-        mobile: "8763006812",
-        datestart: "03/04/2020",
-        dateend: "06/07/2020"
-      },
-      {
-        name: "Anuj shastri",
-        rollno: "2",
-        father: "Manoj shastri",
-        mobile: "8763006812",
-        datestart: "03/04/2020",
-        dateend: "06/07/2020"
-      }
-    ]
+    //   {
+    //     name: "Anuj shastri",
+    //     rollno: "2",
+    //     father: "Manoj shastri",
+    //     mobile: "8763006812",
+    //     datestart: "03/04/2020",
+    //     dateend: "06/07/2020"
+    //   },
+    //   {
+    //     name: "Anuj shastri",
+    //     rollno: "2",
+    //     father: "Manoj shastri",
+    //     mobile: "8763006812",
+    //     datestart: "03/04/2020",
+    //     dateend: "06/07/2020"
+    //   }
+    // ]
   })
 });
 </script>

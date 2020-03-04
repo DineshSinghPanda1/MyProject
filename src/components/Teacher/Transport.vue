@@ -11,20 +11,28 @@
                   <v-avatar size="70" color="grey"></v-avatar>
                 </div>
                 <v-col class="text-center">
-                  <v-chip class="ma-2" color="green" text-color="white">Driver</v-chip>
+                  <v-chip class="ma-2" color="green" text-color="white"
+                    >Driver</v-chip
+                  >
                 </v-col>
               </v-col>
               <v-col>
-                <v-card-title class="gray--text justify-center">{{ card.name }}</v-card-title>
+                <v-card-title class="gray--text justify-center">{{
+                  card.name
+                }}</v-card-title>
                 <v-divider></v-divider>
                 <v-list dense>
                   <v-list-item-group v-model="item" color="primary">
                     <v-list-item v-for="(item, i) in items" :key="i">
                       <v-list-item-content>
-                        <v-list-item-title v-text="item.data"></v-list-item-title>
+                        <v-list-item-title
+                          v-text="item.data"
+                        ></v-list-item-title>
                       </v-list-item-content>
                       <v-list-item-content>
-                        <v-list-item-title v-text="item.value"></v-list-item-title>
+                        <v-list-item-title
+                          v-text="item.value"
+                        ></v-list-item-title>
                       </v-list-item-content>
                     </v-list-item>
                   </v-list-item-group>
@@ -41,16 +49,22 @@
           <v-card :elevation="hover ? 16 : 2">
             <v-row>
               <v-col>
-                <v-card-title class="gray--text justify-center">{{ card.name }}</v-card-title>
+                <v-card-title class="gray--text justify-center">{{
+                  card.name
+                }}</v-card-title>
                 <v-divider></v-divider>
                 <v-list dense>
                   <v-list-item-group v-model="item" color="primary">
                     <v-list-item v-for="(item, i) in items" :key="i">
                       <v-list-item-content>
-                        <v-list-item-title v-text="item.data"></v-list-item-title>
+                        <v-list-item-title
+                          v-text="item.data"
+                        ></v-list-item-title>
                       </v-list-item-content>
                       <v-list-item-content>
-                        <v-list-item-title v-text="item.value"></v-list-item-title>
+                        <v-list-item-title
+                          v-text="item.value"
+                        ></v-list-item-title>
                       </v-list-item-content>
                     </v-list-item>
                   </v-list-item-group>
@@ -61,7 +75,9 @@
                   <v-avatar size="70" color="grey"></v-avatar>
                 </div>
                 <v-col class="text-center">
-                  <v-chip class="ma-2" color="green" text-color="white">Conductor</v-chip>
+                  <v-chip class="ma-2" color="green" text-color="white"
+                    >Conductor</v-chip
+                  >
                 </v-col>
               </v-col>
             </v-row>
@@ -73,11 +89,25 @@
     <!---------------Request------------>
 
     <v-form class="ma-5">
-      <v-select :items="Selectn" label="Select picker point" outlined></v-select>
-      <v-textarea label="Address" placeholder=" Write here" required outlined></v-textarea>
+      <v-select
+        :items="Selectn"
+        label="Select picker point"
+        outlined
+      ></v-select>
+      <v-textarea
+        label="Address"
+        placeholder=" Write here"
+        required
+        outlined
+      ></v-textarea>
       <div class="text-right">
         <v-row justify="center">
-          <v-dialog v-model="dialog" fullscreen hide-overlay transition="dialog-bottom-transition">
+          <v-dialog
+            v-model="dialog"
+            fullscreen
+            hide-overlay
+            transition="dialog-bottom-transition"
+          >
             <template v-slot:activator="{ on }">
               <v-btn color="primary" dark v-on="on">Request</v-btn>
             </template>
@@ -106,20 +136,34 @@
                               <v-avatar size="70" color="grey"></v-avatar>
                             </div>
                             <v-col class="text-center">
-                              <v-chip class="ma-2" color="green" text-color="white">Driver</v-chip>
+                              <v-chip
+                                class="ma-2"
+                                color="green"
+                                text-color="white"
+                                >Driver</v-chip
+                              >
                             </v-col>
                           </v-col>
                           <v-col>
-                            <v-card-title class="gray--text justify-center">{{ card.name }}</v-card-title>
+                            <v-card-title class="gray--text justify-center">{{
+                              card.name
+                            }}</v-card-title>
                             <v-divider></v-divider>
                             <v-list dense>
                               <v-list-item-group v-model="item" color="primary">
-                                <v-list-item v-for="(item, i) in items" :key="i">
+                                <v-list-item
+                                  v-for="(item, i) in items"
+                                  :key="i"
+                                >
                                   <v-list-item-content>
-                                    <v-list-item-title v-text="item.data"></v-list-item-title>
+                                    <v-list-item-title
+                                      v-text="item.data"
+                                    ></v-list-item-title>
                                   </v-list-item-content>
                                   <v-list-item-content>
-                                    <v-list-item-title v-text="item.value"></v-list-item-title>
+                                    <v-list-item-title
+                                      v-text="item.value"
+                                    ></v-list-item-title>
                                   </v-list-item-content>
                                 </v-list-item>
                               </v-list-item-group>
@@ -136,16 +180,25 @@
                       <v-card :elevation="hover ? 16 : 2">
                         <v-row>
                           <v-col>
-                            <v-card-title class="gray--text justify-center">{{ card.name }}</v-card-title>
+                            <v-card-title class="gray--text justify-center">{{
+                              card.name
+                            }}</v-card-title>
                             <v-divider></v-divider>
                             <v-list dense>
                               <v-list-item-group v-model="item" color="primary">
-                                <v-list-item v-for="(item, i) in items" :key="i">
+                                <v-list-item
+                                  v-for="(item, i) in items"
+                                  :key="i.id"
+                                >
                                   <v-list-item-content>
-                                    <v-list-item-title v-text="item.data"></v-list-item-title>
+                                    <v-list-item-title
+                                      v-text="item.data"
+                                    ></v-list-item-title>
                                   </v-list-item-content>
                                   <v-list-item-content>
-                                    <v-list-item-title v-text="item.value"></v-list-item-title>
+                                    <v-list-item-title
+                                      v-text="item.value"
+                                    ></v-list-item-title>
                                   </v-list-item-content>
                                 </v-list-item>
                               </v-list-item-group>
@@ -156,7 +209,12 @@
                               <v-avatar size="70" color="grey"></v-avatar>
                             </div>
                             <v-col class="text-center">
-                              <v-chip class="ma-2" color="green" text-color="white">Conductor</v-chip>
+                              <v-chip
+                                class="ma-2"
+                                color="green"
+                                text-color="white"
+                                >Conductor</v-chip
+                              >
                             </v-col>
                           </v-col>
                         </v-row>
@@ -167,7 +225,7 @@
                 <div class="purple darken-2 text-center mt-10">
                   <span class="white--text .display-1">Bus Detail</span>
                 </div>
-                <v-alert text dense color="teal" border="left">
+                <v-alert>
                   <v-simple-table>
                     <template v-slot:default>
                       <thead></thead>

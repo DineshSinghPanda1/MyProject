@@ -89,9 +89,9 @@
                   <v-list-item>
                     <v-list-item-avatar color="grey"></v-list-item-avatar>
                     <v-list-item-content>
-                      <v-list-item-title class="headline">
-                        {{ dii.name }}
-                      </v-list-item-title>
+                      <v-list-item-title class="headline">{{
+                        dii.name
+                      }}</v-list-item-title>
                     </v-list-item-content>
                   </v-list-item>
                 </v-card>
@@ -112,6 +112,11 @@ import Vue from "vue";
 export default Vue.extend({
   name: "TCReq",
 
-  data: () => ({})
+  data: () => ({
+    dialog: false,
+    notifications: false,
+    sound: true,
+    widgets: false
+  })
 });
 </script>

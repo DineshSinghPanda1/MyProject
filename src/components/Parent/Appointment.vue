@@ -103,6 +103,11 @@ import Vue from "vue";
 export default Vue.extend({
   name: "Cards",
 
-  data: () => ({})
+  data: () => ({
+    dialog: false,
+    notifications: false,
+    sound: true,
+    widgets: false
+  })
 });
 </script>
