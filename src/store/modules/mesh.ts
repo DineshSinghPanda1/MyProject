@@ -6,16 +6,14 @@ export default {
     mesh: []
   },
   getters: {
-    detail: state => state.mesh
+    meshdetail: state => state.mesh
   },
   actions: {
     // method
     // get request..
-    async setMesh({ commit }) {
+    async loadMesh({ commit }) {
       try {
-        const response = await axios.get(
-          "http://192.168.1.136:8000/api/class/1/A/marks"
-        );
+        const response = await axios.get("http://192.168.1.136:8000/api/menu");
         console.log(response.data);
         const data = response.data;
         commit("setMesh", data);

@@ -6,15 +6,15 @@ export default {
     marksheet: []
   },
   getters: {
-    detail: state => state.marksheet
+    marksheetdetail: state => state.marksheet
   },
   actions: {
     // method
     // get request..
-    async stuMarksheet({ commit }) {
+    async loadMarksheet({ commit }) {
       try {
         const response = await axios.get(
-          "http://192.168.1.136:8000/api/class/1/A/marks"
+          "http://192.168.1.136:8000/api/marksheet/assessment/of/student/1"
         );
         console.log(response.data);
         const data = response.data;

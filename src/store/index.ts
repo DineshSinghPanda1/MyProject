@@ -6,6 +6,9 @@ import marks from "./modules/marks";
 import syllabus from "./modules/syllabus";
 import cards from "./modules/cards";
 import application from "./modules/application";
+import marksheet from "./modules/marksheet";
+import mesh from "./modules/mesh";
+import transport from "./modules/transport";
 Vue.use(Vuex, Axios);
 
 export default new Vuex.Store({
@@ -13,6 +16,9 @@ export default new Vuex.Store({
     marks,
     syllabus,
     cards,
-    application
+    application,
+    marksheet,
+    mesh,
+    transport
   }
 });

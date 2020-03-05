@@ -5,12 +5,9 @@
       <v-tab>Test</v-tab>
       <v-tab-item>
         <v-row>
-          <v-col v-for="person in sample1" :key="person.name">
-            <v-card>
-              <v-card-text class="grey text-center">
-                {{ person.title }}
-              </v-card-text>
-
+          <v-col>
+            <v-card v-for="item in marksheetdetail" :key="item">
+              <v-card-text class="grey text-center">Test</v-card-text>
               <v-simple-table height="300px">
                 <template v-slot:default>
                   <thead>
@@ -23,45 +20,31 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>{{ person.subject }}</td>
-                      <td>{{ person.date }}</td>
-                      <td>{{ person.total }}</td>
-                      <td>{{ person.obtain }}</td>
-                      <td>{{ person.status }}</td>
-                    </tr>
-                    <tr>
-                      <td>{{ person.subject }}</td>
-                      <td>{{ person.date }}</td>
-                      <td>{{ person.total }}</td>
-                      <td>{{ person.obtain }}</td>
-                      <td>{{ person.status }}</td>
+                    <tr v-for="(data,index) in item" :key="index">
+                      <td>{{ item[index].subject }}</td>
+                      <td>{{ item[index].date }}</td>
+                      <td>{{ item[index].max_marks }}</td>
+                      <td>{{ item[index].marks_obtained }}</td>
+                      <td>{{ item[index].grade }}</td>
                     </tr>
                   </tbody>
                 </template>
               </v-simple-table>
-
               <div class="text-center">
-                <div>
-                  <v-btn class="ma-2" color="primary" dark>
-                    Print
-                    <v-icon dark right>mdi-checkbox-marked-circle</v-icon>
-                  </v-btn>
-                </div>
+                <v-btn class="ma-5" color="purple lighten-3">Print</v-btn>
               </div>
             </v-card>
           </v-col>
         </v-row>
       </v-tab-item>
+      <!-------------------------/-------------------->
       <!---------------- tab-2------------------------  -->
       <v-tab>Assesment</v-tab>
       <v-tab-item>
         <v-row>
           <v-col v-for="per in sample2" :key="per.name">
             <v-card>
-              <v-card-text class="grey text-center">
-                {{ per.title }}
-              </v-card-text>
+              <v-card-text class="grey text-center">{{ per.title }}</v-card-text>
               <v-simple-table height="300px">
                 <template v-slot:default>
                   <thead>
@@ -133,12 +116,10 @@
                 </template>
               </v-simple-table>
               <div class="text-center">
-                <div>
-                  <v-btn class="ma-2" color="primary" dark>
-                    Print
-                    <v-icon dark right>mdi-checkbox-marked-circle</v-icon>
-                  </v-btn>
-                </div>
+                <v-btn class="ma-2" color="primary" dark>
+                  Print
+                  <v-icon dark right>mdi-checkbox-marked-circle</v-icon>
+                </v-btn>
               </div>
             </v-card>
           </v-col>
@@ -150,9 +131,21 @@
 
 <script lang="ts">
 import Vue from "vue";
+import { mapGetters, mapActions, mapState, mapMutations } from "vuex";
 
 export default Vue.extend({
   name: "Marksheet",
+  mounted() {
+    this.$store.dispatch("loadMarksheet");
+  },
+  methods: {
+    ...mapActions(["loadMarksheet"]),
+    ...mapMutations(["setMarksheet"])
+  },
+  computed: {
+    ...mapGetters(["marksheetdetail"]),
+    ...mapState(["marksheet"])
+  },
 
   data: () => ({
     sample1: [

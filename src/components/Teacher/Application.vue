@@ -76,23 +76,24 @@
         <!--------------------------Last Week---------------->
         <v-tab-item>
           <v-row>
-            <v-col cols="12" md="6">
+            <v-col cols="12" md="6" v-for="item in applicationdetail" :key="item.id">
               <v-hover v-slot:default="{ hover }">
                 <v-card :elevation="hover ? 8 : 2">
+                  <!-------------------->
                   <v-list>
                     <v-list-item>
                       <v-list-item-avatar color="grey" size="100"></v-list-item-avatar>
                       <v-list-item-content>
                         <v-list-item-title class="title">
                           {{
-                          stu.name
+                          item.first_name
                           }}
                         </v-list-item-title>
                         <v-divider></v-divider>
                         <v-list-item-text class="body-2">
-                          <p>Roll no: {{ stu.rollno }}</p>
-                          <p>Father : {{ stu.father }}</p>
-                          <p>Mobile: {{ stu.mobile }}</p>
+                          <p>Roll no: {{ item.roll }}</p>
+                          <p>Father : {{ item.father_name }}</p>
+                          <p>Mobile: {{ item.contacts1 }}</p>
                         </v-list-item-text>
                         <v-divider></v-divider>
                         <!--------------------->
@@ -102,10 +103,10 @@
                       <div class="float-right">
                         <v-col cols="12">
                           <div>
-                            <p>{{ stu.datestart }}</p>
+                            <p>{{ item.to }}</p>
                           </div>
                           <div>
-                            <p>{{ stu.dateend }}</p>
+                            <p>{{ item.from }}</p>
                           </div>
                         </v-col>
                         <v-col cols="12">
@@ -114,6 +115,7 @@
                       </div>
                     </v-list-item>
                   </v-list>
+
                   <v-divider></v-divider>
                   <!----------------->
                   <v-row align="center">
@@ -138,23 +140,24 @@
         <!--------------------------Overal---------------->
         <v-tab-item>
           <v-row>
-            <v-col cols="12" md="6">
+            <v-col cols="12" md="6" v-for="item in applicationdetail" :key="item.id">
               <v-hover v-slot:default="{ hover }">
                 <v-card :elevation="hover ? 8 : 2">
+                  <!-------------------->
                   <v-list>
                     <v-list-item>
                       <v-list-item-avatar color="grey" size="100"></v-list-item-avatar>
                       <v-list-item-content>
                         <v-list-item-title class="title">
                           {{
-                          stu.name
+                          item.first_name
                           }}
                         </v-list-item-title>
                         <v-divider></v-divider>
                         <v-list-item-text class="body-2">
-                          <p>Roll no: {{ stu.rollno }}</p>
-                          <p>Father : {{ stu.father }}</p>
-                          <p>Mobile: {{ stu.mobile }}</p>
+                          <p>Roll no: {{ item.roll }}</p>
+                          <p>Father : {{ item.father_name }}</p>
+                          <p>Mobile: {{ item.contacts1 }}</p>
                         </v-list-item-text>
                         <v-divider></v-divider>
                         <!--------------------->
@@ -164,10 +167,10 @@
                       <div class="float-right">
                         <v-col cols="12">
                           <div>
-                            <p>{{ stu.datestart }}</p>
+                            <p>{{ item.to }}</p>
                           </div>
                           <div>
-                            <p>{{ stu.dateend }}</p>
+                            <p>{{ item.from }}</p>
                           </div>
                         </v-col>
                         <v-col cols="12">
@@ -176,6 +179,7 @@
                       </div>
                     </v-list-item>
                   </v-list>
+
                   <v-divider></v-divider>
                   <!----------------->
                   <v-row align="center">

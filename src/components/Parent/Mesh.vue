@@ -18,13 +18,15 @@
           </v-toolbar>
           <!-----Main card----->
           <v-container>
+            <!-----------------Today------------------------->
             <v-data-iterator :items="items" :items-per-page.sync="itemsPerPage" hide-default-footer>
               <template v-slot:header>
                 <v-toolbar class="mb-2" color="indigo darken-5" dark flat>
                   <v-toolbar-title>Today Menu</v-toolbar-title>
                 </v-toolbar>
               </template>
-
+              <!-------------------------/today----------------->
+              <!----------------------------menu-------------------->
               <template v-slot:default="props">
                 <v-row>
                   <v-col
@@ -59,13 +61,13 @@
             </v-data-iterator>
           </v-container>
 
-          <!----end main---->
+          <!-----------------------end main---->
 
-          <!--------2--------->
+          <!------------------------------2Cards-------------------->
           <v-container grid-list-md>
             <v-layout row>
-              <v-col cols="7" v-for="din in din" :key="din.name">
-                <v-card>
+              <v-col cols="10">
+                <v-card class="ma-4" v-for="mesh in meshdetail" :key="mesh">
                   <v-divider></v-divider>
                   <v-row>
                     <v-col>
@@ -76,9 +78,9 @@
                       </v-responsive>
                     </v-col>
                     <v-col class="text-center">
-                      <v-card-text class="display-3">Breakfast</v-card-text>
+                      <v-card-text class="display-3">{{mesh.type.type}}</v-card-text>
 
-                      <p>07:00 -09:00 am</p>
+                      <p>{{mesh.type.start_time}}-{{mesh.type.end_time}}</p>
                       <v-rating
                         v-model="rating"
                         background-color="green lighten-3"
@@ -89,42 +91,17 @@
                   </v-row>
                   <v-divider></v-divider>
                   <v-row>
-                    <v-col class>
-                      <v-card-text>{{ din.monday }}</v-card-text>
+                    <v-col v-for="(data,index) in mesh.meal" :key="index">
+                      <v-card-text>{{data.day }}</v-card-text>
                       <v-divider></v-divider>
-                      <v-card-text>{{ din.m }}</v-card-text>
-                    </v-col>
-                    <v-col>
-                      <v-card-text>{{ din.tuesday }}</v-card-text>
-                      <v-divider></v-divider>
-                      <v-card-text>{{ din.t }}</v-card-text>
-                    </v-col>
-                    <v-col>
-                      <v-card-text>{{ din.wed }}</v-card-text>
-                      <v-divider></v-divider>
-                      <v-card-text>{{ din.w }}</v-card-text>
-                    </v-col>
-                    <v-col>
-                      <v-card-text>{{ din.thus }}</v-card-text>
-                      <v-divider></v-divider>
-                      <v-card-text>{{ din.th }}</v-card-text>
-                    </v-col>
-                    <v-col>
-                      <v-card-text>{{ din.fir }}</v-card-text>
-                      <v-divider></v-divider>
-                      <v-card-text>{{ din.f }}</v-card-text>
-                    </v-col>
-                    <v-col>
-                      <v-card-text>{{ din.sat }}</v-card-text>
-                      <v-divider></v-divider>
-                      <v-card-text>{{ din.s }}</v-card-text>
+                      <v-card-text>{{ data.meal}}</v-card-text>
                     </v-col>
                   </v-row>
                 </v-card>
               </v-col>
             </v-layout>
           </v-container>
-          <!---------2 end-------->
+          <!-------------------------------2 end------------------------------->
           <!----------3------------------->
           <v-container>
             <v-layout>
@@ -156,10 +133,21 @@
 
 <script lang="ts">
 import Vue from "vue";
+import { mapGetters, mapActions, mapState, mapMutations } from "vuex";
 
 export default Vue.extend({
   name: "Marks",
-
+  mounted() {
+    this.$store.dispatch("loadMesh");
+  },
+  methods: {
+    ...mapActions(["loadMesh"]),
+    ...mapMutations(["setMesh"])
+  },
+  computed: {
+    ...mapGetters(["meshdetail"]),
+    ...mapState(["mesh"])
+  },
   data: () => ({
     dialog: false,
     rating: 4,

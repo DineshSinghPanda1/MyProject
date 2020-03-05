@@ -6,15 +6,15 @@ export default {
     transport: []
   },
   getters: {
-    detail: state => state.transport
+    transportdetail: state => state.transport
   },
   actions: {
     // method
     // get request..
-    async stuTransport({ commit }) {
+    async loadTransport({ commit }) {
       try {
         const response = await axios.get(
-          "http://192.168.1.136:8000/api/class/1/A/marks"
+          "http://192.168.1.136:8000/api/transport/of/student/103"
         );
         console.log(response.data);
         const data = response.data;
