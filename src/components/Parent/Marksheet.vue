@@ -5,46 +5,9 @@
       <v-tab>Test</v-tab>
       <v-tab-item>
         <v-row>
-          <v-col>
-            <v-card v-for="item in marksheetdetail" :key="item">
-              <v-card-text class="grey text-center">Test</v-card-text>
-              <v-simple-table height="300px">
-                <template v-slot:default>
-                  <thead>
-                    <tr>
-                      <th class="text-left">Subject</th>
-                      <th class="text-left">Date</th>
-                      <th class="text-left">Total</th>
-                      <th class="text-left">Obtain</th>
-                      <th class="text-left">Status</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr v-for="(data,index) in item" :key="index">
-                      <td>{{ item[index].subject }}</td>
-                      <td>{{ item[index].date }}</td>
-                      <td>{{ item[index].max_marks }}</td>
-                      <td>{{ item[index].marks_obtained }}</td>
-                      <td>{{ item[index].grade }}</td>
-                    </tr>
-                  </tbody>
-                </template>
-              </v-simple-table>
-              <div class="text-center">
-                <v-btn class="ma-5" color="purple lighten-3">Print</v-btn>
-              </div>
-            </v-card>
-          </v-col>
-        </v-row>
-      </v-tab-item>
-      <!-------------------------/-------------------->
-      <!---------------- tab-2------------------------  -->
-      <v-tab>Assesment</v-tab>
-      <v-tab-item>
-        <v-row>
           <v-col v-for="per in sample2" :key="per.name">
             <v-card>
-              <v-card-text class="grey text-center">{{ per.title }}</v-card-text>
+              <v-card-text class="grey text-center">Test</v-card-text>
               <v-simple-table height="300px">
                 <template v-slot:default>
                   <thead>
@@ -81,6 +44,43 @@
                     <v-icon dark right>mdi-checkbox-marked-circle</v-icon>
                   </v-btn>
                 </div>
+              </div>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-tab-item>
+      <!-------------------------/-------------------->
+      <!---------------- tab-2------------------------  -->
+      <v-tab>Assesment</v-tab>
+      <v-tab-item>
+        <v-row>
+          <v-col>
+            <v-card v-for="item in marksheetdetail" :key="item">
+              <v-card-text class="grey text-center">Assesment</v-card-text>
+              <v-simple-table height="300px">
+                <template v-slot:default>
+                  <thead>
+                    <tr>
+                      <th class="text-left">Subject</th>
+                      <th class="text-left">Date</th>
+                      <th class="text-left">Total</th>
+                      <th class="text-left">Obtain</th>
+                      <th class="text-left">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="(data, index) in item" :key="index">
+                      <td>{{ item[index].subject }}</td>
+                      <td>{{ item[index].date }}</td>
+                      <td>{{ item[index].max_marks }}</td>
+                      <td>{{ item[index].marks_obtained }}</td>
+                      <td>{{ item[index].grade }}</td>
+                    </tr>
+                  </tbody>
+                </template>
+              </v-simple-table>
+              <div class="text-center">
+                <v-btn class="ma-5" color="purple lighten-3">Print</v-btn>
               </div>
             </v-card>
           </v-col>

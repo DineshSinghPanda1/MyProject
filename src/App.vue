@@ -8,34 +8,42 @@
     <!-- <Application /> -->
     <!-- <Recommend /> -->
     <!-- <Marks /> -->
-    <Transport />
+    <!-- <Transport /> -->
     <!-- <Timetable /> -->
     <!-- <TCReq /> -->
     <!-- <NewTeacher /> -->
     <!-- <NewAdmin /> -->
     <!-- <Test /> -->
+    <Application2 />
+    <!-- <Homework /> -->
+    <!-- <Schoolactivity /> -->
+    <!-- <Student /> -->
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 
-// import Cards from "./components/Parent/Cards.vue";
-//import Marks from "./components/Parent/Marks.vue";
+// import Cards from "./com/ponents/Parent/Cards.vue";
+// import Marks from "./components/Parent/Marks.vue";
 // import Mesh from "./components/Parent/Mesh.vue";
-//import Marksheet from "./components/Parent/Marksheet.vue";
-//import TCReq from "./components/Parent/TCReq.vue";
+// import Marksheet from "./components/Parent/Marksheet.vue";
+// import TCReq from "./components/Parent/TCReq.vue";
 //import Navbar from "./components/Parent/Navbar.vue";
-//import Appointment from "./components/Parent/Appointment.vue";
+// import Appointment from "./components/Parent/Appointment.vue";
 
-//import Syllabus from "./components/Teacher/Syllabus.vue";
-//import Application from "./components/Teacher/Application.vue";
+// import Syllabus from "./components/Teacher/Syllabus.vue";
+// import Application from "./components/Teacher/Application.vue";
 //import Recommend from "./components/Teacher/Recommend.vue";
 //import Test from "./components/Parent/Test.vue";
-import Transport from "./components/Teacher/Transport.vue";
+// import Transport from "./components/Teacher/Transport.vue";
 // import Timetable from "./components/Admin/Timetable.vue";
 //import NewTeacher from "./components/Admin/NewTeacher.vue";
 //import NewAdmin from "./components/Admin/NewAdmin.vue";
+import Application2 from "./components/PARENTS/Application2.vue";
+// import Homework from "./components/PARENTS/Homework.vue";
+// import Schoolactivity from "./components/PARENTS/Schoolactivity.vue";
+// import Student from "./components/PARENTS/Student.vue";
 
 export default Vue.extend({
   name: "App",
@@ -45,17 +53,21 @@ export default Vue.extend({
     // Marks
     // Marksheet
     // Mesh
-    //TCReq
+    // TCReq
     // Appointment
-    //Application
+    // Application
     //Navbar
     //Recommend
-    //Syllabus
+    // Syllabus
     // Test
     // Timetable
-    Transport
+    // Transport
     //NewTeacher,
     //NewAdmin
+    Application2
+    // Homework
+    // Schoolactivity
+    // Student
   },
 
   data: () => ({

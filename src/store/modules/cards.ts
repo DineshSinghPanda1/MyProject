@@ -12,7 +12,7 @@ export default {
     async loadCards({ commit }) {
       try {
         const response = await axios.get(
-          "http://192.168.1.136:8000/api/teacher/all/details/of/1"
+          "http://192.168.1.109:8000/api/class/teacher"
         );
         console.log(response.data);
         const data = response.data;

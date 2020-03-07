@@ -13,7 +13,7 @@ export default {
     // get request..
     async loadSyllabus({ commit }) {
       try {
-        const response = await axios.get("http://192.168.1.136:8000/api/class");
+        const response = await axios.get("http://192.168.1.109:8000/api/class");
         console.log(response.data);
         const data = response.data;
         commit("setSyllabus", response.data);

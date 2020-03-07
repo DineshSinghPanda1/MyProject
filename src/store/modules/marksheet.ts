@@ -14,7 +14,7 @@ export default {
     async loadMarksheet({ commit }) {
       try {
         const response = await axios.get(
-          "http://192.168.1.136:8000/api/marksheet/assessment/of/student/1"
+          "http://192.168.1.109:8000/api/marksheet/assessment/of/student/1"
         );
         console.log(response.data);
         const data = response.data;

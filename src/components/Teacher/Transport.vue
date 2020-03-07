@@ -66,22 +66,18 @@
                           <v-col>
                             <v-card-title class="gray--text justify-center">
                               {{
-                              card.name
+                              transportdetail.conductor.first_name
                               }}
                             </v-card-title>
                             <v-divider></v-divider>
-                            <v-list dense>
-                              <v-list-item-group v-model="item" color="primary">
-                                <v-list-item v-for="(item, i) in items" :key="i.id">
-                                  <v-list-item-content>
-                                    <v-list-item-title v-text="item.data"></v-list-item-title>
-                                  </v-list-item-content>
-                                  <v-list-item-content>
-                                    <v-list-item-title v-text="item.value"></v-list-item-title>
-                                  </v-list-item-content>
-                                </v-list-item>
-                              </v-list-item-group>
-                            </v-list>
+                            <v-row>
+                              <v-col>ID:</v-col>
+                              <v-col>{{transportdetail.conductor.id}}</v-col>
+                            </v-row>
+                            <v-row>
+                              <v-col>Contact:</v-col>
+                              <v-col>{{transportdetail.conductor.contacts1}}</v-col>
+                            </v-row>
                           </v-col>
                           <v-col>
                             <div id="avatar" class="text-center">
@@ -102,14 +98,26 @@
                 <v-alert>
                   <v-simple-table>
                     <template v-slot:default>
-                      <thead></thead>
                       <tbody>
-                        <tr v-for="item in desserts" :key="item.name">
-                          <td>{{ item.data }}</td>
-                          <td></td>
-                          <td>:</td>
-                          <td></td>
-                          <td>{{ item.value }}</td>
+                        <tr>
+                          <td>Bus</td>
+                          <td>{{transportdetail.bus.bus_number}}</td>
+                        </tr>
+                        <tr>
+                          <td>Route ID</td>
+                          <td>--</td>
+                        </tr>
+                        <tr>
+                          <td>GPS ID</td>
+                          <td>{{transportdetail.bus.gps}}</td>
+                        </tr>
+                        <tr>
+                          <td>Timing</td>
+                          <td>{{transportdetail.bus.arrival_time}}</td>
+                        </tr>
+                        <tr>
+                          <td>Fee</td>
+                          <td>--</td>
                         </tr>
                       </tbody>
                     </template>

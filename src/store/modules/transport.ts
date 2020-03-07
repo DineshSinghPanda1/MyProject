@@ -14,7 +14,7 @@ export default {
     async loadTransport({ commit }) {
       try {
         const response = await axios.get(
-          "http://192.168.1.136:8000/api/transport/of/student/103"
+          "http://192.168.1.109:8000/api/transport/of/student/103"
         );
         console.log(response.data);
         const data = response.data;

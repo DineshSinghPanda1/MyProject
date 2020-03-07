@@ -3,22 +3,22 @@ import axios from "axios";
 export default {
   state: {
     //data
-    marks: []
+    schoolactivity: []
   },
   getters: {
-    detail: state => state.marks
+    activitydetail: state => state.schoolactivity
   },
   actions: {
     // method
     // get request..
-    async loadMarks({ commit }) {
+    async loadSchoolActivity({ commit }) {
       try {
         const response = await axios.get(
-          "http://192.168.1.109:8000/api/class/1/A/marks"
+          "http://192.168.1.109:8000/api/activity"
         );
         console.log(response.data);
         const data = response.data;
-        commit("setMarks", data);
+        commit("setSchoolActivity", data);
       } catch (error) {
         alert(error);
       }
@@ -27,7 +27,8 @@ export default {
   },
   mutations: {
     //used for changing the state
-    setMarks: (state, marks) => (state.marks = marks)
+    setSchoolActivity: (state, schoolactivity) =>
+      (state.schoolactivity = schoolactivity)
   },
   modules: {}
 };
