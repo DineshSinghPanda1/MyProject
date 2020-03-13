@@ -1,7 +1,12 @@
 <template>
   <v-container>
     <v-row justify="center">
-      <v-dialog v-model="dialog" fullscreen hide-overlay transition="dialog-bottom-transition">
+      <v-dialog
+        v-model="dialog"
+        fullscreen
+        hide-overlay
+        transition="dialog-bottom-transition"
+      >
         <template v-slot:activator="{ on }">
           <v-btn color="primary" dark v-on="on">Open Dialog</v-btn>
         </template>
@@ -19,7 +24,11 @@
           <!-----Main card----->
           <v-container>
             <!-----------------Today------------------------->
-            <v-data-iterator :items="items" :items-per-page.sync="itemsPerPage" hide-default-footer>
+            <v-data-iterator
+              :items="items"
+              :items-per-page.sync="itemsPerPage"
+              hide-default-footer
+            >
               <template v-slot:header>
                 <v-toolbar class="mb-2" color="indigo darken-5" dark flat>
                   <v-toolbar-title>Today Menu</v-toolbar-title>
@@ -38,7 +47,9 @@
                     lg="3"
                   >
                     <v-card>
-                      <v-card-title class="subheading font-weight-bold">{{ item.name }}</v-card-title>
+                      <v-card-title class="subheading font-weight-bold">{{
+                        item.name
+                      }}</v-card-title>
                       <v-divider></v-divider>
                       <v-row>
                         <v-simple-table>
@@ -78,9 +89,11 @@
                       </v-responsive>
                     </v-col>
                     <v-col class="text-center">
-                      <v-card-text class="display-3">{{mesh.type.type}}</v-card-text>
+                      <v-card-text class="display-3">{{
+                        mesh.type.type
+                      }}</v-card-text>
 
-                      <p>{{mesh.type.start_time}}-{{mesh.type.end_time}}</p>
+                      <p>{{ mesh.type.start_time }}-{{ mesh.type.end_time }}</p>
                       <v-rating
                         v-model="rating"
                         background-color="green lighten-3"
@@ -91,10 +104,10 @@
                   </v-row>
                   <v-divider></v-divider>
                   <v-row>
-                    <v-col v-for="(data,index) in mesh.meal" :key="index">
-                      <v-card-text>{{data.day }}</v-card-text>
+                    <v-col v-for="(data, index) in mesh.meal" :key="index">
+                      <v-card-text>{{ data.day }}</v-card-text>
                       <v-divider></v-divider>
-                      <v-card-text>{{ data.meal}}</v-card-text>
+                      <v-card-text>{{ data.meal }}</v-card-text>
                     </v-col>
                   </v-row>
                 </v-card>
@@ -117,7 +130,11 @@
                   <v-col class>
                     <p>07:00 -09:00 am</p>
                     <v-card-text class="display">{{ dii.food }}</v-card-text>
-                    <v-rating v-model="rating" background-color="green lighten-3" color="green"></v-rating>
+                    <v-rating
+                      v-model="rating"
+                      background-color="green lighten-3"
+                      color="green"
+                    ></v-rating>
                   </v-col>
                 </v-card>
               </v-flex>

@@ -13,19 +13,6 @@
           <v-card flat>
             <v-card-text>
               <v-row align="center">
-                <!-- <v-col class="d-flex" cols="12" sm="4">
-                  <select label="class">
-                    <option>hdfgdg</option>
-                  </select>
-                  <div v-for="(item,value) in allsyllabus" :key="value">
-                    <div v-for="n in item" :key="n">{{n.class}}</div>
-                  </div>
-                </v-col>-->
-                <!-- <v-col class="d-flex" cols="12" sm="4">
-                  <v-select label="Class" outlined>
-                    <option>fgsdhgh</option>
-                  </v-select>
-                </v-col>-->
                 <v-col class="d-flex" cols="12" sm="4">
                   <v-select
                     outlined
@@ -38,22 +25,32 @@
 
                 <!---------->
                 <v-col class="d-flex" cols="12" sm="4">
-                  <v-select :items="Section" label="Section" outlined></v-select>
+                  <v-select
+                    :items="Section"
+                    label="Section"
+                    outlined
+                  ></v-select>
                 </v-col>
                 <v-col class="d-flex" cols="12" sm="4">
-                  <v-select :items="Subject" label="Subject" outlined></v-select>
+                  <v-select
+                    :items="Subject"
+                    label="Subject"
+                    outlined
+                  ></v-select>
                 </v-col>
               </v-row>
             </v-card-text>
             <v-card>
               <!--------------------->
 
-              <v-expansion-panels v-for="chapter in chapter" :key="chapter.name" focusable>
+              <v-expansion-panels
+                v-for="chapter in chapter"
+                :key="chapter.name"
+                focusable
+              >
                 <v-expansion-panel v-for="(item, i) in 1" :key="i.id">
                   <v-expansion-panel-header>
-                    {{
-                    chapter
-                    }}
+                    {{ chapter }}
                   </v-expansion-panel-header>
                   <v-expansion-panel-content>
                     <v-data-table
@@ -78,24 +75,38 @@
                   <v-select :items="Class" label="Class" outlined></v-select>
                 </v-col>
                 <v-col class="d-flex" cols="12" sm="4">
-                  <v-select :items="Section" label="Section" outlined></v-select>
+                  <v-select
+                    :items="Section"
+                    label="Section"
+                    outlined
+                  ></v-select>
                 </v-col>
                 <v-col class="d-flex" cols="12" sm="4">
-                  <v-select :items="Subject" label="Subject" outlined></v-select>
+                  <v-select
+                    :items="Subject"
+                    label="Subject"
+                    outlined
+                  ></v-select>
                 </v-col>
               </v-row>
             </v-card-text>
             <!----------------------------->
             <v-card>
-              <v-expansion-panels v-for="chapter in chapter" :key="chapter.name" focusable>
+              <v-expansion-panels
+                v-for="chapter in chapter"
+                :key="chapter.name"
+                focusable
+              >
                 <v-expansion-panel v-for="(item, i) in 1" :key="i.id">
                   <v-expansion-panel-header class="grey text-center">
-                    {{
-                    chapter
-                    }}
+                    {{ chapter }}
                   </v-expansion-panel-header>
                   <v-expansion-panel-content>
-                    <v-data-table :headers="headers" :items="desserts" class="elevation-1"></v-data-table>
+                    <v-data-table
+                      :headers="headers"
+                      :items="desserts"
+                      class="elevation-1"
+                    ></v-data-table>
                   </v-expansion-panel-content>
                 </v-expansion-panel>
               </v-expansion-panels>
@@ -112,24 +123,38 @@
                   <v-select :items="Class" label="Class" outlined></v-select>
                 </v-col>
                 <v-col class="d-flex" cols="12" sm="4">
-                  <v-select :items="Section" label="Section" outlined></v-select>
+                  <v-select
+                    :items="Section"
+                    label="Section"
+                    outlined
+                  ></v-select>
                 </v-col>
                 <v-col class="d-flex" cols="12" sm="4">
-                  <v-select :items="Subject" label="Subject" outlined></v-select>
+                  <v-select
+                    :items="Subject"
+                    label="Subject"
+                    outlined
+                  ></v-select>
                 </v-col>
               </v-row>
             </v-card-text>
             <!----------------------------->
             <v-card>
-              <v-expansion-panels v-for="chapter in chapter" :key="chapter.name" focusable>
+              <v-expansion-panels
+                v-for="chapter in chapter"
+                :key="chapter.name"
+                focusable
+              >
                 <v-expansion-panel v-for="(item, i) in 1" :key="i">
                   <v-expansion-panel-header class="grey text-center">
-                    {{
-                    chapter
-                    }}
+                    {{ chapter }}
                   </v-expansion-panel-header>
                   <v-expansion-panel-content>
-                    <v-data-table :headers="headers" :items="desserts" class="elevation-1"></v-data-table>
+                    <v-data-table
+                      :headers="headers"
+                      :items="desserts"
+                      class="elevation-1"
+                    ></v-data-table>
                   </v-expansion-panel-content>
                 </v-expansion-panel>
               </v-expansion-panels>
@@ -151,11 +176,14 @@ export default Vue.extend({
   mounted() {
     this.$store.dispatch("loadSyllabus");
   },
-
-  computed: {
-    ...mapGetters(["allsyllabus"])
+  methods: {
+    ...mapActions(["loadSyllabus"]),
+    ...mapMutations(["setSyllabus"])
   },
-
+  computed: {
+    ...mapGetters(["allsyllabus"]),
+    ...mapState(["syllabus"])
+  },
   data: () => ({
     tabs: null,
     option: [],

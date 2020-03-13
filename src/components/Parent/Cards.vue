@@ -1,43 +1,50 @@
 <template>
-  <v-container fluid grid-list-md>
+  <v-container grid-list-md>
     <!---Class1 Start-->
-
     <div class v-for="item in cardsdetail" :key="item">
-      <v-btn class="purple white--text ml-8">class {{item.class}}</v-btn>
-
+      <v-btn class="purple white--text ml-10">class {{ item.class }}</v-btn>
       <v-alert outlined color="purple">
+        <!-------------------Card-------------------->
         <v-layout>
-          <v-row>
-            <v-col md="4" v-for="(data,index) in item.section" :key="index">
-              <v-hover v-slot:default="{ hover }" open-delay="200">
-                <v-card :elevation="hover ? 16 : 2">
-                  <v-card-title class="purple--text justify-center">Section {{data.section}}</v-card-title>
-                  <v-divider></v-divider>
-                  <v-row>
-                    <v-col class="ma-5">
-                      <v-responsive>
-                        <v-avatar size="80">
-                          <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John" />
-                        </v-avatar>
-                      </v-responsive>
-                    </v-col>
-                    <v-col>
-                      <v-card-contant class="purple--text">Name: {{data.teacher}}</v-card-contant>
-                      <br />
-
-                      <v-card-contant class="purple--text">Subject: {{data.subject}}</v-card-contant>
-                      <br />
-                      <v-card-contant class="purple--text">Strength: {{data.strength}}</v-card-contant>
-                      <br />
-                      <v-card-contant class="purple--text">Present: {{data.present}}</v-card-contant>
-                      <br />
-                      <v-card-contant class="purple--text">Absent: {{data.absent}}</v-card-contant>
-                    </v-col>
-                  </v-row>
-                </v-card>
-              </v-hover>
-            </v-col>
-          </v-row>
+          <v-flex md="3" v-for="(data, index) in item.section" :key="index">
+            <v-hover v-slot:default="{ hover }" open-delay="200">
+              <v-card :elevation="hover ? 16 : 2" raised>
+                <v-card-title class="purple--text justify-center">
+                  Section {{ data.section }}
+                </v-card-title>
+                <v-divider color="purple"></v-divider>
+                <v-list>
+                  <v-list-item-group v-model="model" multiple color="indigo">
+                    <v-list-item>
+                      <v-list-item-avatar color="grey" size="80">
+                        <img
+                          src="https://cdn.vuetifyjs.com/images/john.jpg"
+                          alt="John"
+                        />
+                      </v-list-item-avatar>
+                      <v-list-item-content>
+                        <v-list-item-title class="purple--text"
+                          >Name: {{ data.teacher }}
+                        </v-list-item-title>
+                        <v-list-item-title class="purple--text">
+                          Subject:{{ data.subject }}
+                        </v-list-item-title>
+                        <v-list-item-title class="purple--text"
+                          >Strength: {{ data.strength }}
+                        </v-list-item-title>
+                        <v-list-item-title class="purple--text"
+                          >Present: {{ data.present }}
+                        </v-list-item-title>
+                        <v-list-item-title class="purple--text"
+                          >Absent:{{ data.absent }}
+                        </v-list-item-title>
+                      </v-list-item-content>
+                    </v-list-item>
+                  </v-list-item-group>
+                </v-list>
+              </v-card>
+            </v-hover>
+          </v-flex>
         </v-layout>
       </v-alert>
     </div>
