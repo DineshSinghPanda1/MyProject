@@ -8,7 +8,7 @@
             <v-icon>fas fa-search</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title class=" white--text">Search</v-list-item-title>
+            <v-list-item-title class="white--text">Search</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-list-item link>
@@ -16,9 +16,7 @@
             <v-icon>---</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title class=" white--text"
-              >Issue Books</v-list-item-title
-            >
+            <v-list-item-title class="white--text">Issue Books</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-list-item link>
@@ -26,9 +24,7 @@
             <v-icon>--</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title class=" white--text"
-              >Return Books</v-list-item-title
-            >
+            <v-list-item-title class="white--text">Return Books</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-list-item link>
@@ -36,7 +32,7 @@
             <v-icon>--</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title class=" white--text">Records</v-list-item-title>
+            <v-list-item-title class="white--text">Records</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-list-item link>
@@ -44,9 +40,7 @@
             <v-icon>--</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title class=" white--text"
-              >Add Books</v-list-item-title
-            >
+            <v-list-item-title class="white--text">Add Books</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -63,9 +57,7 @@
         <!----------search------------>
         <v-flex ma-3>
           <v-card raised>
-            <v-card-title class="justify-center purple--text"
-              >Search</v-card-title
-            >
+            <v-card-title class="justify-center purple--text">Search</v-card-title>
           </v-card>
         </v-flex>
         <!------------------------>
@@ -84,12 +76,7 @@
                   />
                 </v-col>
                 <v-col>
-                  <v-btn
-                    color="deep-purple lighten-1  white--text"
-                    height="55"
-                    width="120"
-                    >Search</v-btn
-                  >
+                  <v-btn color="deep-purple lighten-1  white--text" height="55" width="120">Search</v-btn>
                 </v-col>
               </v-row>
             </v-card-title>
@@ -98,7 +85,7 @@
         <!-------------------------->
         <!---------table---------->
         <v-flex ma-3 mt-12>
-          <p class="#8232C0--text">Book Details</p>
+          <p class="purple--text">Book Details</p>
           <v-simple-table height="300px" light>
             <template v-slot:default>
               <thead>
@@ -134,7 +121,7 @@
       </v-container>
     </v-content>
     <v-footer color="#8232C0" app>
-      <span class="white--text">&copy; 2019</span>
+      <span class="white--text">&copy; 2020</span>
     </v-footer>
   </v-app>
 </template>

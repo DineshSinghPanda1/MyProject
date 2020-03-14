@@ -1,6 +1,7 @@
 <template>
   <v-app>
     <!-- <Cards /> -->
+    <!-- <Navbar /> -->
     <!-- <Appointment /> -->
     <!-- <Marksheet /> -->
     <!-- <Mesh /> -->
@@ -19,7 +20,8 @@
     <!-- <Schoolactivity /> -->
     <!-- <Student /> -->
     <!-- <Search /> -->
-    <IssueBook />
+    <!-- <IssueBook /> -->
+    <AllRecord />
   </v-app>
 </template>
 
@@ -31,7 +33,7 @@ import Vue from "vue";
 // import Mesh from "./components/Parent/Mesh.vue";
 // import Marksheet from "./components/Parent/Marksheet.vue";
 // import TCReq from "./components/Parent/TCReq.vue";
-//import Navbar from "./components/Parent/Navbar.vue";
+// import Navbar from "./components/Parent/Navbar.vue";
 // import Appointment from "./components/Parent/Appointment.vue";
 
 // import Syllabus from "./components/Teacher/Syllabus.vue";
@@ -47,7 +49,8 @@ import Vue from "vue";
 // import Schoolactivity from "./components/PARENTS/Schoolactivity.vue";
 // import Student from "./components/PARENTS/Student.vue";
 // import Search from "./components/Admin/Search.vue";
-import IssueBook from "./components/Admin/IssueBook.vue";
+// import IssueBook from "./components/Admin/IssueBook.vue";
+import AllRecord from "./components/Admin/AllRecord.vue";
 
 export default Vue.extend({
   name: "App",
@@ -60,7 +63,7 @@ export default Vue.extend({
     // TCReq
     // Appointment
     // Application
-    //Navbar
+    // Navbar
     //Recommend
     // Syllabus
     // Test
@@ -73,7 +76,8 @@ export default Vue.extend({
     // Schoolactivity
     // Student
     // Search
-    IssueBook
+    // IssueBook
+    AllRecord
   },
 
   data: () => ({

@@ -25,33 +25,19 @@
 
                 <!---------->
                 <v-col class="d-flex" cols="12" sm="4">
-                  <v-select
-                    :items="Section"
-                    label="Section"
-                    outlined
-                  ></v-select>
+                  <v-select :items="Section" label="Section" outlined></v-select>
                 </v-col>
                 <v-col class="d-flex" cols="12" sm="4">
-                  <v-select
-                    :items="Subject"
-                    label="Subject"
-                    outlined
-                  ></v-select>
+                  <v-select :items="Subject" label="Subject" outlined></v-select>
                 </v-col>
               </v-row>
             </v-card-text>
             <v-card>
               <!--------------------->
 
-              <v-expansion-panels
-                v-for="chapter in chapter"
-                :key="chapter.name"
-                focusable
-              >
+              <v-expansion-panels v-for="chapter in chapter" :key="chapter.name" focusable>
                 <v-expansion-panel v-for="(item, i) in 1" :key="i.id">
-                  <v-expansion-panel-header>
-                    {{ chapter }}
-                  </v-expansion-panel-header>
+                  <v-expansion-panel-header>{{ chapter }}</v-expansion-panel-header>
                   <v-expansion-panel-content>
                     <v-data-table
                       v-on="on"
@@ -75,38 +61,20 @@
                   <v-select :items="Class" label="Class" outlined></v-select>
                 </v-col>
                 <v-col class="d-flex" cols="12" sm="4">
-                  <v-select
-                    :items="Section"
-                    label="Section"
-                    outlined
-                  ></v-select>
+                  <v-select :items="Section" label="Section" outlined></v-select>
                 </v-col>
                 <v-col class="d-flex" cols="12" sm="4">
-                  <v-select
-                    :items="Subject"
-                    label="Subject"
-                    outlined
-                  ></v-select>
+                  <v-select :items="Subject" label="Subject" outlined></v-select>
                 </v-col>
               </v-row>
             </v-card-text>
             <!----------------------------->
             <v-card>
-              <v-expansion-panels
-                v-for="chapter in chapter"
-                :key="chapter.name"
-                focusable
-              >
+              <v-expansion-panels v-for="chapter in chapter" :key="chapter.name" focusable>
                 <v-expansion-panel v-for="(item, i) in 1" :key="i.id">
-                  <v-expansion-panel-header class="grey text-center">
-                    {{ chapter }}
-                  </v-expansion-panel-header>
+                  <v-expansion-panel-header class="grey text-center">{{ chapter }}</v-expansion-panel-header>
                   <v-expansion-panel-content>
-                    <v-data-table
-                      :headers="headers"
-                      :items="desserts"
-                      class="elevation-1"
-                    ></v-data-table>
+                    <v-data-table :headers="headers" :items="desserts" class="elevation-1"></v-data-table>
                   </v-expansion-panel-content>
                 </v-expansion-panel>
               </v-expansion-panels>
@@ -123,38 +91,20 @@
                   <v-select :items="Class" label="Class" outlined></v-select>
                 </v-col>
                 <v-col class="d-flex" cols="12" sm="4">
-                  <v-select
-                    :items="Section"
-                    label="Section"
-                    outlined
-                  ></v-select>
+                  <v-select :items="Section" label="Section" outlined></v-select>
                 </v-col>
                 <v-col class="d-flex" cols="12" sm="4">
-                  <v-select
-                    :items="Subject"
-                    label="Subject"
-                    outlined
-                  ></v-select>
+                  <v-select :items="Subject" label="Subject" outlined></v-select>
                 </v-col>
               </v-row>
             </v-card-text>
             <!----------------------------->
             <v-card>
-              <v-expansion-panels
-                v-for="chapter in chapter"
-                :key="chapter.name"
-                focusable
-              >
+              <v-expansion-panels v-for="chapter in chapter" :key="chapter.name" focusable>
                 <v-expansion-panel v-for="(item, i) in 1" :key="i">
-                  <v-expansion-panel-header class="grey text-center">
-                    {{ chapter }}
-                  </v-expansion-panel-header>
+                  <v-expansion-panel-header class="grey text-center">{{ chapter }}</v-expansion-panel-header>
                   <v-expansion-panel-content>
-                    <v-data-table
-                      :headers="headers"
-                      :items="desserts"
-                      class="elevation-1"
-                    ></v-data-table>
+                    <v-data-table :headers="headers" :items="desserts" class="elevation-1"></v-data-table>
                   </v-expansion-panel-content>
                 </v-expansion-panel>
               </v-expansion-panels>
