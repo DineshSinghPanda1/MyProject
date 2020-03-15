@@ -10,7 +10,7 @@
             <v-hover v-slot:default="{ hover }" open-delay="200">
               <v-card :elevation="hover ? 16 : 2" raised>
                 <v-card-title class="purple--text justify-center">Section {{ data.section }}</v-card-title>
-                <v-divider color="purple"></v-divider>
+                <v-divider></v-divider>
                 <v-list>
                   <v-list-item-group v-model="model" multiple color="indigo">
                     <v-list-item>

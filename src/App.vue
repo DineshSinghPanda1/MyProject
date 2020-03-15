@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <!-- <Cards /> -->
+    <Cards />
     <!-- <Navbar /> -->
     <!-- <Appointment /> -->
     <!-- <Marksheet /> -->
@@ -20,8 +20,9 @@
     <!-- <Schoolactivity /> -->
     <!-- <Student /> -->
     <!-- <Search /> -->
-    <IssueBook />
+    <!-- <IssueBook /> -->
     <!-- <AllRecord /> -->
+    <AdminHouse />
   </v-app>
 </template>
 
@@ -49,8 +50,9 @@ import Vue from "vue";
 // import Schoolactivity from "./components/PARENTS/Schoolactivity.vue";
 // import Student from "./components/PARENTS/Student.vue";
 // import Search from "./components/Library/Search.vue";
-import IssueBook from "./components/Library/IssueBook.vue";
+// import IssueBook from "./components/Library/IssueBook.vue";
 // import AllRecord from "./components/Library/AllRecord.vue";
+import AdminHouse from "./components/Admin/AdminHouse.vue";
 
 export default Vue.extend({
   name: "App",
@@ -76,8 +78,9 @@ export default Vue.extend({
     // Schoolactivity
     // Student
     // Search
-    IssueBook
+    // IssueBook
     // AllRecord
+    AdminHouse
   },
 
   data: () => ({

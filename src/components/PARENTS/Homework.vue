@@ -36,7 +36,7 @@
                 subject.date
                 }}
               </v-expansion-panel-content>
-              <v-expansion-panel-content class="purple--text">
+              <v-expansion-panel-content class="grey--text">
                 {{
                 subject.paragraph
                 }}

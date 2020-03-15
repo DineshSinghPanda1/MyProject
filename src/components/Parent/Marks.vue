@@ -18,11 +18,12 @@
         <!-----Main marks card----->
         <v-container grid-list-md>
           <v-layout row>
-            <v-col cols="6" v-for="item in detail" :key="item.id">
-              <v-card>
+            <v-flex cols="6" v-for="item in detail" :key="item.id">
+              <v-card class="text-center">
                 <v-card-title class="grey">Assesment</v-card-title>
+
                 <v-row>
-                  <v-col class="text-center">
+                  <v-col>
                     <v-card-text>Total</v-card-text>
                     <v-chip class="ma-2" color="green">{{ item.max_marks }}</v-chip>
                   </v-col>
@@ -36,7 +37,7 @@
                   </v-col>
                 </v-row>
               </v-card>
-            </v-col>
+            </v-flex>
           </v-layout>
         </v-container>
         <!----end main---->
@@ -54,10 +55,10 @@ export default Vue.extend({
   mounted() {
     this.$store.dispatch("loadMarks");
   },
-  // methods: {
-  //   ...mapActions(["loadMarks"]),
-  //   ...mapMutations(["setMarks"])
-  // },
+  methods: {
+    ...mapActions(["loadMarks"]),
+    ...mapMutations(["setMarks"])
+  },
   computed: {
     ...mapGetters(["detail"]),
     ...mapState(["marks"])
