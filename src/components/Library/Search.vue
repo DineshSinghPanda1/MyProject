@@ -3,44 +3,20 @@
     <!----------navigator------------->
     <v-navigation-drawer v-model="drawer" app color="#8232C0">
       <v-list dense>
-        <v-list-item link>
+        <v-list-item
+          link
+          v-for="link in link"
+          :key="link.text"
+          route
+          :to="link.route"
+        >
           <v-list-item-action>
-            <v-icon>fas fa-search</v-icon>
+            <v-icon>{{ link.search }}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title class="white--text">Search</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item link>
-          <v-list-item-action>
-            <v-icon>---</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title class="white--text">Issue Books</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item link>
-          <v-list-item-action>
-            <v-icon>--</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title class="white--text">Return Books</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item link>
-          <v-list-item-action>
-            <v-icon>--</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title class="white--text">Records</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item link>
-          <v-list-item-action>
-            <v-icon>--</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title class="white--text">Add Books</v-list-item-title>
+            <v-list-item-title class="white--text">{{
+              link.text
+            }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -57,7 +33,9 @@
         <!----------search------------>
         <v-flex ma-3>
           <v-card raised>
-            <v-card-title class="justify-center purple--text">Search</v-card-title>
+            <v-card-title class="justify-center purple--text"
+              >Search</v-card-title
+            >
           </v-card>
         </v-flex>
         <!------------------------>
@@ -76,7 +54,12 @@
                   />
                 </v-col>
                 <v-col>
-                  <v-btn color="deep-purple lighten-1  white--text" height="55" width="120">Search</v-btn>
+                  <v-btn
+                    color="deep-purple lighten-1  white--text"
+                    height="55"
+                    width="120"
+                    >Search</v-btn
+                  >
                 </v-col>
               </v-row>
             </v-card-title>
@@ -143,6 +126,33 @@ export default {
         editor: "06",
         avilable: "true",
         action: ""
+      }
+    ],
+    link: [
+      {
+        icon: "search",
+        text: "Search",
+        route: "/Search"
+      },
+      {
+        icon: "",
+        text: "Issue Books",
+        route: "/IssueBook"
+      },
+      {
+        icon: "",
+        text: "Return Books",
+        route: "/RetunBook"
+      },
+      {
+        icon: "",
+        text: "Records",
+        route: "/Record"
+      },
+      {
+        icon: "",
+        text: "Add Books",
+        route: "/AddBook"
       }
     ]
   })

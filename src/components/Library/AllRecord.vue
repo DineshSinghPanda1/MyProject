@@ -3,44 +3,20 @@
     <!----------navigator------------->
     <v-navigation-drawer v-model="drawer" app color="#8232C0">
       <v-list dense>
-        <v-list-item link>
+        <v-list-item
+          link
+          v-for="link in link"
+          :key="link.text"
+          route
+          :to="link.route"
+        >
           <v-list-item-action>
-            <v-icon>fas fa-search</v-icon>
+            <v-icon>{{ link.search }}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title class="white--text">Search</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item link>
-          <v-list-item-action>
-            <v-icon>---</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title class="white--text">Issue Books</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item link>
-          <v-list-item-action>
-            <v-icon>--</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title class="white--text">Return Books</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item link>
-          <v-list-item-action>
-            <v-icon>--</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title class="white--text">Records</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item link>
-          <v-list-item-action>
-            <v-icon>--</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title class="white--text">Add Books</v-list-item-title>
+            <v-list-item-title class="white--text">{{
+              link.text
+            }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -80,7 +56,9 @@
                           </v-col>
                           <P class="mt-5">OR</P>
                           <v-col>
-                            <v-btn x-large color="#8232C0" class="white--text">Scan Barcode</v-btn>
+                            <v-btn x-large color="#8232C0" class="white--text"
+                              >Scan Barcode</v-btn
+                            >
                           </v-col>
                         </v-row>
                       </v-card-title>
@@ -91,15 +69,28 @@
                   <v-flex ma-3 xs12 sm12 md6>
                     <v-card raised v-for="item in Borrower" :key="item.name">
                       <v-list>
-                        <v-list-item-group v-model="model" multiple color="indigo">
+                        <v-list-item-group
+                          v-model="model"
+                          multiple
+                          color="indigo"
+                        >
                           <v-list-item>
                             <v-list-item-avatar color="grey" size="80">
-                              <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John" />
+                              <img
+                                src="https://cdn.vuetifyjs.com/images/john.jpg"
+                                alt="John"
+                              />
                             </v-list-item-avatar>
                             <v-list-item-content>
-                              <v-list-item-title class="grey--text">{{item.name}}</v-list-item-title>
-                              <v-list-item-title class="grey--text">Roll No: {{item.rollno}}</v-list-item-title>
-                              <v-list-item-title class="grey--text">Class: {{item.class}}</v-list-item-title>
+                              <v-list-item-title class="grey--text">{{
+                                item.name
+                              }}</v-list-item-title>
+                              <v-list-item-title class="grey--text"
+                                >Roll No: {{ item.rollno }}</v-list-item-title
+                              >
+                              <v-list-item-title class="grey--text"
+                                >Class: {{ item.class }}</v-list-item-title
+                              >
                             </v-list-item-content>
                           </v-list-item>
                         </v-list-item-group>
@@ -136,12 +127,14 @@
                             <td>{{ item.title }}</td>
                             <td>{{ item.author }}</td>
                             <td>{{ item.studentid }}</td>
-                            <td>{{item.fine}}</td>
+                            <td>{{ item.fine }}</td>
                             <td>{{ item.issuedate }}</td>
-                            <td>{{item.returndate}}</td>
+                            <td>{{ item.returndate }}</td>
 
                             <td>
-                              <v-chip color="#8232C0" text-color="white">View</v-chip>
+                              <v-chip color="#8232C0" text-color="white"
+                                >View</v-chip
+                              >
                             </td>
                           </tr>
                         </tbody>
@@ -168,11 +161,15 @@
                             class="hidden-sm-and-down"
                             prepend-inner-icon="mdi-magnify"
                           />
-                          <h6 class="grey--text">*Search by book title,author,subject &id</h6>
+                          <h6 class="grey--text">
+                            *Search by book title,author,subject &id
+                          </h6>
                         </v-col>
                         <P class="mt-5">OR</P>
                         <v-col>
-                          <v-btn x-large color="#8232C0" class="white--text">Scan Barcode</v-btn>
+                          <v-btn x-large color="#8232C0" class="white--text"
+                            >Scan Barcode</v-btn
+                          >
                         </v-col>
                       </v-row>
                     </v-card-title>
@@ -183,16 +180,31 @@
                 <v-flex ma-3 xs12 sm12 md6>
                   <v-card raised>
                     <v-list v-for="item in card" :key="item.name">
-                      <v-list-item-group v-model="model" multiple color="indigo">
+                      <v-list-item-group
+                        v-model="model"
+                        multiple
+                        color="indigo"
+                      >
                         <v-list-item>
                           <v-list-item-avatar color="grey" size="80">
-                            <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John" />
+                            <img
+                              src="https://cdn.vuetifyjs.com/images/john.jpg"
+                              alt="John"
+                            />
                           </v-list-item-avatar>
                           <v-list-item-content>
-                            <v-list-item-title class="grey--text">Subject: {{item.subject}}</v-list-item-title>
-                            <v-list-item-title class="grey--text">Title: {{item.title}}</v-list-item-title>
-                            <v-list-item-title class="grey--text">Author: {{item.author}}</v-list-item-title>
-                            <v-list-item-title class="grey--text">Copies: {{item.copies}}</v-list-item-title>
+                            <v-list-item-title class="grey--text"
+                              >Subject: {{ item.subject }}</v-list-item-title
+                            >
+                            <v-list-item-title class="grey--text"
+                              >Title: {{ item.title }}</v-list-item-title
+                            >
+                            <v-list-item-title class="grey--text"
+                              >Author: {{ item.author }}</v-list-item-title
+                            >
+                            <v-list-item-title class="grey--text"
+                              >Copies: {{ item.copies }}</v-list-item-title
+                            >
                           </v-list-item-content>
                         </v-list-item>
                       </v-list-item-group>
@@ -227,12 +239,12 @@
                           </td>
                           <td>{{ item.name }}</td>
                           <td>{{ item.bid }}</td>
-                          <td>{{ item.bookid}}</td>
+                          <td>{{ item.bookid }}</td>
                           <td>{{ item.fine }}</td>
                           <td>{{ item.issuedate }}</td>
-                          <td>{{item.returndate}}</td>
+                          <td>{{ item.returndate }}</td>
 
-                          <td class="red--text">{{item.status}}</td>
+                          <td class="red--text">{{ item.status }}</td>
                         </tr>
                       </tbody>
                     </template>
@@ -268,7 +280,11 @@
                               outlined
                             ></v-text-field>
                           </template>
-                          <v-date-picker v-model="date" no-title @input="menu1 = false"></v-date-picker>
+                          <v-date-picker
+                            v-model="date"
+                            no-title
+                            @input="menu1 = false"
+                          ></v-date-picker>
                         </v-menu>
                       </v-col>
 
@@ -291,7 +307,11 @@
                               outlined
                             ></v-text-field>
                           </template>
-                          <v-date-picker v-model="date" no-title @input="menu2 = false"></v-date-picker>
+                          <v-date-picker
+                            v-model="date"
+                            no-title
+                            @input="menu2 = false"
+                          ></v-date-picker>
                         </v-menu>
                       </v-col>
                     </v-row>
@@ -307,7 +327,8 @@
                             color="#8232C0"
                             class="white--text"
                             width="480"
-                          >Issue Details</v-btn>
+                            >Issue Details</v-btn
+                          >
                         </v-card>
                       </v-col>
                       <v-col md="6" class="ml-auto">
@@ -317,7 +338,8 @@
                             color="#8232C0"
                             class="white--text"
                             width="480"
-                          >Return Details</v-btn>
+                            >Return Details</v-btn
+                          >
                         </v-card>
                       </v-col>
                     </v-row>
@@ -352,10 +374,12 @@
                           <td>{{ item.author }}</td>
                           <td>{{ item.studentid }}</td>
                           <td>{{ item.issuedate }}</td>
-                          <td>{{item.returndate}}</td>
+                          <td>{{ item.returndate }}</td>
 
                           <td>
-                            <v-chip color="#8232C0" text-color="white">View</v-chip>
+                            <v-chip color="#8232C0" text-color="white"
+                              >View</v-chip
+                            >
                           </td>
                         </tr>
                       </tbody>
@@ -378,6 +402,7 @@
 </template>
 
 <script>
+import { mdiAccount } from "@mdi/js";
 export default {
   props: {
     source: String
@@ -478,6 +503,33 @@ export default {
         title: "The shadow",
         author: "Dr.Rekha Joshi",
         copies: "10"
+      }
+    ],
+    link: [
+      {
+        icon: "search",
+        text: "Search",
+        route: "/Search"
+      },
+      {
+        icon: "",
+        text: "Issue Books",
+        route: "/IssueBook"
+      },
+      {
+        icon: "",
+        text: "Return Books",
+        route: "/RetunBook"
+      },
+      {
+        icon: "",
+        text: "Records",
+        route: "/Record"
+      },
+      {
+        icon: "",
+        text: "Add Books",
+        route: "/AddBook"
       }
     ]
   })
